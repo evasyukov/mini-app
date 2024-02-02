@@ -1,21 +1,23 @@
-import { useState } from "react";
-import Button from "./Button";
+import { useState } from "react"
+import Button from "./Button"
+import AppOne from "./app/AppOne"
+import TabsSection from "./TabsSection"
+import HomeSection from "./HomeSection"
 
 function App() {
-  const [count, setCount] = useState(0);
+  const [tab, setTab] = useState("home")
 
   return (
     <>
       <div className="menu">
-        <Button>app 1</Button>
-        <Button>app 2</Button>
-        <Button>app 3</Button>
-        <Button>app 4</Button>
-        <Button>app 5</Button>
-        <Button>app 6</Button>
+        <TabsSection active={tab} onChange={(current) => setTab(current)} />
+
+        {tab === "home" && <HomeSection />}
+        {tab === 'appOne' && <AppOne/>}
+
       </div>
     </>
-  );
+  )
 }
 
-export default App;
+export default App
