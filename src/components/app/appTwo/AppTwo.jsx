@@ -1,6 +1,6 @@
 import Modal from "./Modal"
 import Button from "../../Button"
-
+import { useState } from "react"
 
 export default function AppTwo() {
   const [modal, setModal] = useState(false)
@@ -9,7 +9,7 @@ export default function AppTwo() {
     <>
       <Button onClick={() => setModal(true)}>Открыть окно</Button>
 
-      <Modal>
+      <Modal open={modal}>
         <p>
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Laudantium
           aliquid, corrupti veniam consequatur, nisi tenetur adipisci odio

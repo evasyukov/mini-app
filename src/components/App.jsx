@@ -9,17 +9,15 @@ function App() {
   const [tab, setTab] = useState("home")
 
   return (
-    <>
       <div className="menu">
         <TabsSection active={tab} onChange={(current) => setTab(current)} />
 
         {tab === "home" && <HomeSection />}
         {tab === 'appOne' && <AppOne/>}
-        {tab === 'appOne' && <AppTwo/>}
+        {tab === 'appTwo' && <AppTwo/>}
 
 
       </div>
-    </>
   )
 }
 
