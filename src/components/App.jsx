@@ -3,6 +3,7 @@ import Button from "./Button"
 import AppOne from "./app/AppOne"
 import TabsSection from "./TabsSection"
 import HomeSection from "./HomeSection"
+import AppTwo from "./app/AppTwo"
 
 function App() {
   const [tab, setTab] = useState("home")
@@ -14,6 +15,8 @@ function App() {
 
         {tab === "home" && <HomeSection />}
         {tab === 'appOne' && <AppOne/>}
+        {tab === 'appOne' && <AppTwo/>}
+
 
       </div>
     </>
