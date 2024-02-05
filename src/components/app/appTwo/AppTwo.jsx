@@ -16,6 +16,7 @@ export default function AppTwo() {
           facilis explicabo optio quam labore quod, autem asperiores commodi
           quia at obcaecati non!
         </p>
+        <Button onClick={() => setModal(false)}>Закрыть окно</Button>
       </Modal>
     </>
   )
