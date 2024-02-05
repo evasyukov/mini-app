@@ -1,6 +1,6 @@
-import { createPortal } from "react-dom"
-import { useRef, useEffect } from "react"
-import Button from "../Button"
+import Modal from "./Modal"
+import Button from "../../Button"
+
 
 export default function AppTwo() {
   const [modal, setModal] = useState(false)
