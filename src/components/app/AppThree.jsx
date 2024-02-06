@@ -31,7 +31,7 @@ function Result() {
   )
 }
 
-function Progress({ queston }) {
+function Progress({ queston, onClickVariant }) {
   return (
     <>
       <div className="progress">
@@ -39,8 +39,8 @@ function Progress({ queston }) {
       </div>
       <h1>{queston.title}</h1>
       <ul>
-        {queston.variants.map((text) => (
-          <li key={text}>{text}</li>
+        {queston.variants.map((text, index) => (
+          <li onClick={()=> onClickVariant(index)} key={text}>{text}</li>
         ))}
       </ul>
     </>
@@ -51,9 +51,13 @@ export default function AppThree() {
   const [step, setStep] = useState(0)
   const queston = questons[step]
 
+  const onClickVariant = (index) => {
+    setStep(step + 1); // переход к следующему вопросу
+  }
+
   return (
     <div className="App">
-      <Progress queston={queston} />
+      <Progress queston={queston} onClickVariant={onClickVariant} />
       {/* <Result /> */}
     </div>
   )
