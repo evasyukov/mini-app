@@ -1,15 +1,15 @@
-import {useState} from "react"
+import { useState } from "react"
 
 const questons = [
   {
     title: "React - это?",
     variants: ["библиотека", "фреймворк", "приложение"],
-    corrent: 0,
+    correct: 0,
   },
   {
     title: "Компонент - это?",
     variants: ["приложение", "часть страницы", "не знаю"],
-    corrent: 1,
+    correct: 1,
   },
   {
     title: ".jsx - это?",
@@ -18,15 +18,17 @@ const questons = [
       "библиотека для HTML",
       "Это тот же HTML, но с возможностью выполнять JS-код",
     ],
-    corrent: 2,
+    correct: 2,
   },
 ]
 
-function Result() {
+function Result({correct}) {
   return (
     <div className="result">
-      <h2>Вы отгадали...</h2>
-      <button>Попробовать снова</button>
+      <h2>Правильных ответов:  {correct}</h2>
+      <a href="/">
+        <button>Попробовать снова</button>
+      </a>
     </div>
   )
 }
@@ -40,7 +42,9 @@ function Progress({ queston, onClickVariant }) {
       <h1>{queston.title}</h1>
       <ul>
         {queston.variants.map((text, index) => (
-          <li onClick={()=> onClickVariant(index)} key={text}>{text}</li>
+          <li onClick={() => onClickVariant(index)} key={text}>
+            {text}
+          </li>
         ))}
       </ul>
     </>
@@ -48,17 +52,25 @@ function Progress({ queston, onClickVariant }) {
 }
 
 export default function AppThree() {
-  const [step, setStep] = useState(0)
+  const [correct, setCorrect] = useState(0) // правильные вопросы
+  const [step, setStep] = useState(0) // шаг вопроса
   const queston = questons[step]
 
   const onClickVariant = (index) => {
-    setStep(step + 1); // переход к следующему вопросу
+    setStep(step + 1) // переход к следующему вопросу
+    if (index === queston.correct) {
+      // если индекс с правильным ответом
+      setCorrect(correct + 1) // прибавляем 1
+    }
   }
 
   return (
     <div className="App">
-      <Progress queston={queston} onClickVariant={onClickVariant} />
-      {/* <Result /> */}
+      {step != questons.length ? (
+        <Progress queston={queston} onClickVariant={onClickVariant} />
+      ) : (
+        <Result correct={correct} />
+      )}
     </div>
   )
 }
