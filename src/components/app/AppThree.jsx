@@ -20,6 +20,15 @@ const questons = [
   },
 ]
 
+function Result() {
+    return (
+        <div className="result">
+        <h2>Вы отгадали...</h2>
+        <button>Попробовать снова</button>
+      </div>
+    )
+}
+
 export default function AppThree() {
   return <h3>Опросник</h3>
 }
