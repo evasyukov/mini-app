@@ -21,14 +21,35 @@ const questons = [
 ]
 
 function Result() {
-    return (
-        <div className="result">
-        <h2>Вы отгадали...</h2>
-        <button>Попробовать снова</button>
+  return (
+    <div className="result">
+      <h2>Вы отгадали...</h2>
+      <button>Попробовать снова</button>
+    </div>
+  )
+}
+
+function Progress() {
+  return (
+    <>
+      <div className="progress">
+        <div style={{ width: "50%" }} className="progress__inner"></div>
       </div>
-    )
+      <h1>Вопрос</h1>
+      <ul>
+        <li>вариант 1</li>
+        <li>вариант 2</li>
+        <li>вариант 3</li>
+      </ul>
+    </>
+  )
 }
 
 export default function AppThree() {
-  return <h3>Опросник</h3>
+  return (
+    <div className="App">
+      <Progress />
+      {/* <Result /> */}
+    </div>
+  )
 }
