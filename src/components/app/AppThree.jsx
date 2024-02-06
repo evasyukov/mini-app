@@ -1,3 +1,5 @@
+import {useState} from "react"
+
 const questons = [
   {
     title: "React - это?",
@@ -29,26 +31,29 @@ function Result() {
   )
 }
 
-function Progress() {
+function Progress({ queston }) {
   return (
     <>
       <div className="progress">
         <div style={{ width: "50%" }} className="progress__inner"></div>
       </div>
-      <h1>Вопрос</h1>
+      <h1>{queston.title}</h1>
       <ul>
-        <li>вариант 1</li>
-        <li>вариант 2</li>
-        <li>вариант 3</li>
+        {queston.variants.map((text) => (
+          <li key={text}>{text}</li>
+        ))}
       </ul>
     </>
   )
 }
 
 export default function AppThree() {
+  const [step, setStep] = useState(0)
+  const queston = questons[step]
+
   return (
     <div className="App">
-      <Progress />
+      <Progress queston={queston} />
       {/* <Result /> */}
     </div>
   )
