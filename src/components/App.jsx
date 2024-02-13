@@ -5,6 +5,7 @@ import TabsSection from "./TabsSection"
 import HomeSection from "./HomeSection"
 import AppTwo from "./app/appTwo/AppTwo"
 import AppThree from "./app/AppThree"
+import AppFour from "./app/AppFour"
 
 function App() {
   const [tab, setTab] = useState("home")
@@ -17,6 +18,8 @@ function App() {
         {tab === 'appOne' && <AppOne/>}
         {tab === 'appTwo' && <AppTwo/>}
         {tab === 'appThree' && <AppThree/>}
+        {tab === 'appFour' && <AppFour/>}
+
 
 
 
