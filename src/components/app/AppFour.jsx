@@ -61,8 +61,8 @@ const AppFour = () => {
   }
 
   return (
-    <div className="calculator">
-      <div className="buttons">
+    <div>
+      <div>
         {calcButton.map((item) => (
           <Button key={item} onClick={() => handleButtonClick(item.value)}>
             {item.value}

@@ -30,6 +30,12 @@ export default function TabsSection({ active, onChange }) {
       >
        Калькулятор
       </Button>
+      <Button
+        isActive={active === "appFive"}
+        onClick={() => onChange("appFive")}
+      >
+       Конвертер валют
+      </Button>
     </section>
   )
 }

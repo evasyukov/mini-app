@@ -6,6 +6,7 @@ import HomeSection from "./HomeSection"
 import AppTwo from "./app/appTwo/AppTwo"
 import AppThree from "./app/AppThree"
 import AppFour from "./app/AppFour"
+import AppFive from "./app/AppFive"
 
 function App() {
   const [tab, setTab] = useState("home")
@@ -19,9 +20,7 @@ function App() {
         {tab === 'appTwo' && <AppTwo/>}
         {tab === 'appThree' && <AppThree/>}
         {tab === 'appFour' && <AppFour/>}
-
-
-
+        {tab === 'appFour' && <AppFive/>}
 
       </div>
   )
