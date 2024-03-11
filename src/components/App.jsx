@@ -9,7 +9,7 @@ import AppFour from "./app/AppFour"
 import AppFive from "./app/AppFive"
 
 function App() {
-  const [tab, setTab] = useState("home")
+  const [tab, setTab] = useState("appFive")
 
   return (
       <div className="menu">
@@ -20,7 +20,7 @@ function App() {
         {tab === 'appTwo' && <AppTwo/>}
         {tab === 'appThree' && <AppThree/>}
         {tab === 'appFour' && <AppFour/>}
-        {tab === 'appFour' && <AppFive/>}
+        {tab === 'appFive' && <AppFive/>}
 
       </div>
   )
